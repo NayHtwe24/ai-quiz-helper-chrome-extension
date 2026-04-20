@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 AI Quiz Helper</h1>
+    <p class="subtitle">Scan the page for questions & get AI answers</p>
+
+    <div class="field">
+      <label for="providerSelect">Choose AI Provider:</label>
+      <select id="providerSelect">
+        <option value="claude">Claude (Anthropic)</option>
+        <option value="openai">ChatGPT (OpenAI)</option>
+        <option value="gemini">Gemini (Google)</option>
+        <option value="groq">Groq — Free tier (Gemma, Llama…)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="modelSelect">Model:</label>
+      <select id="modelSelect"></select>
+    </div>
+
+    <div class="field">
+      <div class="api-key-label-row">
+        <label for="apiKey">API Key:</label>
+        <a id="getApiKeyLink" href="#" target="_blank" class="get-key-link">Get API Key →</a>
+      </div>
+      <input type="password" id="apiKey" placeholder="Paste your API key here" />
+      <small id="keyHint">Your key is stored locally in Chrome storage.</small>
+    </div>
+
+    <button id="saveBtn" class="btn-secondary">💾 Save Settings</button>
+    <button id="copyQuestionsBtn" class="btn-primary">📋 Scan Questions from Page</button>
+
+    <div id="status" class="status"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
